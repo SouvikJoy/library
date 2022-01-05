@@ -1,13 +1,17 @@
 <template>
-$END$
+  <div class="dt-card">
+    <div class="dt-card-title">
+      <slot name="title"></slot>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-name: "dtCard"
+  name: "dtCard"
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>

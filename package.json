@@ -1,6 +1,6 @@
 {
-  "name": "@souvikjoy/souviks",
-  "version": "1.0.0",
+  "name": "@souvikjoy/dt-vue",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/librabry.js",
   "module": "dist/librabry.mjs",
