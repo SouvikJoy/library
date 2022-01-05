@@ -16,8 +16,7 @@ script$1.__file = "src/components/dtInput.vue";
 var script = {
   name: "dtCard",
   props: {
-    type: String,
-    default: '1'
+    type: String
   }
 };
 
