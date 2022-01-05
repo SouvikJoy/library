@@ -21,8 +21,7 @@
 export default {
   name: "dtCard",
   props: {
-    type: String,
-    default: '1'
+    type: String
   }
 }
 </script>
