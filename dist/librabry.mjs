@@ -1,4 +1,4 @@
-import { openBlock, createElementBlock, createElementVNode, renderSlot } from 'vue';
+import { openBlock, createElementBlock, renderSlot, createCommentVNode } from 'vue';
 
 var script$1 = {
   name: 'dtInput'
@@ -18,13 +18,18 @@ var script = {
 };
 
 const _hoisted_1 = { class: "dt-card" };
-const _hoisted_2 = { class: "dt-card-title" };
+const _hoisted_2 = {
+  key: 0,
+  class: "dt-card-title"
+};
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (openBlock(), createElementBlock("div", _hoisted_1, [
-    createElementVNode("div", _hoisted_2, [
-      renderSlot(_ctx.$slots, "title")
-    ])
+    (_ctx.$slots.title)
+      ? (openBlock(), createElementBlock("div", _hoisted_2, [
+          renderSlot(_ctx.$slots, "title")
+        ]))
+      : createCommentVNode("v-if", true)
   ]))
 }
 

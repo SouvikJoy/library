@@ -20,13 +20,18 @@ var script = {
 };
 
 const _hoisted_1 = { class: "dt-card" };
-const _hoisted_2 = { class: "dt-card-title" };
+const _hoisted_2 = {
+  key: 0,
+  class: "dt-card-title"
+};
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1, [
-    vue.createElementVNode("div", _hoisted_2, [
-      vue.renderSlot(_ctx.$slots, "title")
-    ])
+    (_ctx.$slots.title)
+      ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2, [
+          vue.renderSlot(_ctx.$slots, "title")
+        ]))
+      : vue.createCommentVNode("v-if", true)
   ]))
 }
 

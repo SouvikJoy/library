@@ -1,6 +1,6 @@
 <template>
   <div class="dt-card">
-    <div class="dt-card-title">
+    <div class="dt-card-title" v-if="$slots.title">
       <slot name="title"></slot>
     </div>
   </div>
