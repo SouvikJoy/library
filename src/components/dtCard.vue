@@ -4,14 +4,20 @@
       <div class="dt-card__img" v-if="$slots.img">
         <slot name="img"></slot>
         <div class="dt-card__interactions" v-if="$slots.interactions">
-          <slot name="interactions"></slot>
+          <span>
+            <slot name="interactions"></slot>
+          </span>
         </div>
       </div>
       <div class="dt-card__text" v-if="$slots.text">
-        <slot name="text"></slot>
-        <div v-if="$slots.title">
-          <slot name="title"></slot>
-        </div>
+        <div class="dt-card__title" v-if="$slots.title">
+          <h3>
+            <slot name="title"></slot>
+          </h3>
+      </div>
+        <p>
+          <slot name="text"></slot>
+        </p>
       </div>
     </div>
   </div>

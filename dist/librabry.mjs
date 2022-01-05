@@ -33,7 +33,10 @@ const _hoisted_4 = {
   key: 1,
   class: "dt-card__text"
 };
-const _hoisted_5 = { key: 0 };
+const _hoisted_5 = {
+  key: 0,
+  class: "dt-card__title"
+};
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (openBlock(), createElementBlock("div", {
@@ -45,19 +48,25 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             renderSlot(_ctx.$slots, "img"),
             (_ctx.$slots.interactions)
               ? (openBlock(), createElementBlock("div", _hoisted_3, [
-                  renderSlot(_ctx.$slots, "interactions")
+                  createElementVNode("span", null, [
+                    renderSlot(_ctx.$slots, "interactions")
+                  ])
                 ]))
               : createCommentVNode("v-if", true)
           ]))
         : createCommentVNode("v-if", true),
       (_ctx.$slots.text)
         ? (openBlock(), createElementBlock("div", _hoisted_4, [
-            renderSlot(_ctx.$slots, "text"),
             (_ctx.$slots.title)
               ? (openBlock(), createElementBlock("div", _hoisted_5, [
-                  renderSlot(_ctx.$slots, "title")
+                  createElementVNode("h3", null, [
+                    renderSlot(_ctx.$slots, "title")
+                  ])
                 ]))
-              : createCommentVNode("v-if", true)
+              : createCommentVNode("v-if", true),
+            createElementVNode("p", null, [
+              renderSlot(_ctx.$slots, "text")
+            ])
           ]))
         : createCommentVNode("v-if", true)
     ])
