@@ -1,4 +1,4 @@
-import dtInput from "./dtInput";
+import dtInput from "./dtInput.vue";
 
 export default {
     dtInput

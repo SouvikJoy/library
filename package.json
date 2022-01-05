@@ -1,0 +1,26 @@
+{
+  "name": "@souvikjoy/souviks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/librabry.js",
+  "module": "dist/librabry.mjs",
+  "files": [
+    "dist/*",
+    "src/components/*"
+  ],
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "vue": "^3.2.26"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.2.26",
+    "rollup": "^2.63.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-vue": "^6.0.0"
+  }
+}
