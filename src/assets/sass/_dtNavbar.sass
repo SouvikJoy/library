@@ -1,10 +1,10 @@
 @import "root"
 @import "mixins"
 
-.vs-navbar-content
-  --vs-color: var(--vs-background)
+.dt-navbar-content
+  --dt-color: var(--dt-background)
 
-.vs-navbar__item
+.dt-navbar__item
   padding: 10px 15px
   margin: 0px
   border: 0px
@@ -20,7 +20,7 @@
     opacity: 1
 
 
-    .vs-navbar-content
+    .dt-navbar-content
   width: 100%
   position: absolute
   z-index: 9000
@@ -34,15 +34,15 @@
   &.paddingScroll:not(.paddingScrollActive)
     padding-top: 20px
     padding-bottom: 20px
-    .vs-navbar__group__items
+    .dt-navbar__group__items
       margin-bottom: -30px
-  &.vsNavbarSquare
+  &.dtNavbarSquare
     border-radius: 0px
   &.textWhite
     color: #fff
-    .vs-navbar__line
+    .dt-navbar__line
       background: #fff
-    .vs-navbar__item
+    .dt-navbar__item
       &:before
         background: #fff
   &.fixed
@@ -52,7 +52,7 @@
   &.hidden
     transform: translate(0,-100%)
 
-.vs-navbar
+.dt-navbar
   width: 100%
   position: relative
   display: flex
