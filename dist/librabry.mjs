@@ -1,7 +1,7 @@
 import { openBlock, createElementBlock, normalizeClass, createElementVNode, renderSlot, createCommentVNode } from 'vue';
 
 var script$1 = {
-  name: 'dtInput'
+  name: "dtInput",
 };
 
 const _hoisted_1$1 = { type: "text" };
@@ -16,8 +16,8 @@ script$1.__file = "src/components/dtInput.vue";
 var script = {
   name: "dtCard",
   props: {
-    type: String
-  }
+    type: String,
+  },
 };
 
 const _hoisted_1 = { class: "dt-card" };
@@ -77,19 +77,19 @@ script.render = render;
 script.__file = "src/components/dtCard.vue";
 
 var components = {
-    dtInput: script$1,
-    dtCard: script
+  dtInput: script$1,
+  dtCard: script,
 };
 
 const plugin = {
-    install(Vue) {
-        for (const prop in components) {
-            if (components.hasOwnProperty(prop)) {
-                const component = components[prop];
-                Vue.component(component.name, component);
-            }
-        }
+  install(Vue) {
+    for (const prop in components) {
+      if (components.hasOwnProperty(prop)) {
+        const component = components[prop];
+        Vue.component(component.name, component);
+      }
     }
+  },
 };
 
 export { plugin as default };
