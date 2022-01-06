@@ -1,5 +1,5 @@
 <template>
-  <div class="dt-navbar-content" style="background: var(--dt-primary)">
+  <div :class="navClass">
     <div class="dt-navbar">
       <div class="dt-navbar__left" v-if="$slots.left">
         <slot name="left"></slot>
@@ -19,8 +19,28 @@
 </template>
 
 <script>
+import { computed } from "vue";
+
 export default {
   name: "dtNavbar",
+  props: {
+    navClass: {
+      type: String,
+    },
+    setup(props) {
+      const navClass = computed(() => {
+        return [
+          props.success ? "dt-navbar-content dt-navbar-bg" : "",
+          !props.success ? "dt-navbar-content" : "",
+        ];
+      });
+
+      return {
+        navClass,
+        props,
+      };
+    },
+  },
 };
 </script>
 
