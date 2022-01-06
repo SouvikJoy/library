@@ -1,4 +1,8 @@
 import { openBlock, createElementBlock, normalizeClass, createElementVNode, renderSlot, createCommentVNode } from 'vue';
+import 'root';
+import 'global';
+import 'mixins';
+import 'dtCard';
 
 var script$1 = {
   name: 'dtInput'

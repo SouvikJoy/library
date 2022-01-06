@@ -1,6 +1,10 @@
 'use strict';
 
 var vue = require('vue');
+require('root');
+require('global');
+require('mixins');
+require('dtCard');
 
 var script$1 = {
   name: 'dtInput'

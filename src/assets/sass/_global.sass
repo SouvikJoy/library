@@ -1,0 +1,43 @@
+@import "root"
+@import "mixins"
+@import "dtCard"
+
+*, html
+  box-sizing: border-box
+  margin: 0
+
+#app
+  display: grid
+  place-items: center
+  min-height: 100vh
+  background-color: rgba(254, 255, 255, 0.47)
+
+.dt-wrapper
+  display: grid
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+  gap: 40px
+
+.dt-card-content
+  --dt-color: var(--dt-primary)
+
+.dt-button
+  --dt-color: ''
+  --dt-color-rotate: var(--dt-primary)
+  --dt-color-darken: var(--dt-primary)
+  --dt-button-padding: 8px 12px
+  --dt-button-margin: 5px
+  --dt-button-border-radius: 12px
+  --dt-button-text-color: #fff
+
+[class*="--primary"]
+  --dt-color: var(--dt-primary)
+[class*="--default"]
+  --dt-color: var(--dt-primary)
+[class*="--danger"]
+  --dt-color: var(--dt-danger)
+[class*="--success"]
+  --dt-color: var(--dt-success)
+[class*="--dark"]
+  --dt-color: var(--dt-dark)
+[class*="--warn"]
+  --dt-color: var(--dt-warn)
