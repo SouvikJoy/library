@@ -2,54 +2,54 @@
 
 var vue = require('vue');
 
-var script$1 = {
+var script$2 = {
   name: "dtInput",
 };
 
-const _hoisted_1$1 = { type: "text" };
+const _hoisted_1$2 = { type: "text" };
 
-function render$1(_ctx, _cache, $props, $setup, $data, $options) {
-  return (vue.openBlock(), vue.createElementBlock("input", _hoisted_1$1))
+function render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  return (vue.openBlock(), vue.createElementBlock("input", _hoisted_1$2))
 }
 
-script$1.render = render$1;
-script$1.__file = "src/components/dtInput.vue";
+script$2.render = render$2;
+script$2.__file = "src/components/dtInput.vue";
 
-var script = {
+var script$1 = {
   name: "dtCard",
   props: {
     type: String,
   },
 };
 
-const _hoisted_1 = { class: "dt-card" };
-const _hoisted_2 = {
+const _hoisted_1$1 = { class: "dt-card" };
+const _hoisted_2$1 = {
   key: 0,
   class: "dt-card__img"
 };
-const _hoisted_3 = {
+const _hoisted_3$1 = {
   key: 0,
   class: "dt-card__interactions"
 };
-const _hoisted_4 = {
+const _hoisted_4$1 = {
   key: 1,
   class: "dt-card__text"
 };
-const _hoisted_5 = {
+const _hoisted_5$1 = {
   key: 0,
   class: "dt-card__title"
 };
 
-function render(_ctx, _cache, $props, $setup, $data, $options) {
+function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   return (vue.openBlock(), vue.createElementBlock("div", {
     class: vue.normalizeClass(`dt-card-content type-${this.type}`)
   }, [
-    vue.createElementVNode("div", _hoisted_1, [
+    vue.createElementVNode("div", _hoisted_1$1, [
       (_ctx.$slots.img)
-        ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2, [
+        ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2$1, [
             vue.renderSlot(_ctx.$slots, "img"),
             (_ctx.$slots.interactions)
-              ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3, [
+              ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3$1, [
                   vue.createElementVNode("span", null, [
                     vue.renderSlot(_ctx.$slots, "interactions")
                   ])
@@ -58,9 +58,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           ]))
         : vue.createCommentVNode("v-if", true),
       (_ctx.$slots.text)
-        ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_4, [
+        ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_4$1, [
             (_ctx.$slots.title)
-              ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_5, [
+              ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_5$1, [
                   vue.createElementVNode("h3", null, [
                     vue.renderSlot(_ctx.$slots, "title")
                   ])
@@ -75,12 +75,62 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ], 2 /* CLASS */))
 }
 
+script$1.render = render$1;
+script$1.__file = "src/components/dtCard.vue";
+
+var script = {
+  name: "dtNavbar",
+};
+
+const _hoisted_1 = { class: "dt-navbar-content" };
+const _hoisted_2 = { class: "dt-navbar" };
+const _hoisted_3 = {
+  key: 0,
+  class: "dt-navbar__left"
+};
+const _hoisted_4 = {
+  key: 1,
+  class: "dt-navbar__center"
+};
+const _hoisted_5 = { class: "dt-navbar__item" };
+const _hoisted_6 = {
+  key: 2,
+  class: "dt-navbar__right"
+};
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1, [
+    vue.createElementVNode("div", _hoisted_2, [
+      (_ctx.$slots.left)
+        ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3, [
+            vue.renderSlot(_ctx.$slots, "left")
+          ]))
+        : vue.createCommentVNode("v-if", true),
+      (_ctx.$slots.default)
+        ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_4, [
+            vue.renderSlot(_ctx.$slots, "default", {}, () => [
+              vue.createElementVNode("div", _hoisted_5, [
+                vue.renderSlot(_ctx.$slots, "navbar-item")
+              ])
+            ])
+          ]))
+        : vue.createCommentVNode("v-if", true),
+      (_ctx.$slots.right)
+        ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_6, [
+            vue.renderSlot(_ctx.$slots, "right")
+          ]))
+        : vue.createCommentVNode("v-if", true)
+    ])
+  ]))
+}
+
 script.render = render;
-script.__file = "src/components/dtCard.vue";
+script.__file = "src/components/dtNavbar.vue";
 
 var components = {
-  dtInput: script$1,
-  dtCard: script,
+  dtInput: script$2,
+  dtCard: script$1,
+  dtNavbar: script,
 };
 
 const plugin = {
