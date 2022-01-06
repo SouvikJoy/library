@@ -24,22 +24,23 @@ import { computed } from "vue";
 export default {
   name: "dtNavbar",
   props: {
-    navClass: {
-      type: String,
+    success: {
+      type: Boolean,
+      default: false,
     },
-    setup(props) {
-      const navClass = computed(() => {
-        return [
-          props.success ? "dt-navbar-content dt-navbar-bg" : "",
-          !props.success ? "dt-navbar-content" : "",
-        ];
-      });
+  },
+  setup(props) {
+    const navClass = computed(() => {
+      return [
+        props.success ? "dt-navbar-content dt-navbar-bg" : "",
+        !props.success ? "dt-navbar-content" : "dt-navbar-content",
+      ];
+    });
 
-      return {
-        navClass,
-        props,
-      };
-    },
+    return {
+      navClass,
+      props,
+    };
   },
 };
 </script>
