@@ -1,0 +1,76 @@
+@function -color($color, $alpha: 1) {
+  @return unquote('rgba(var(--dt-#{$color}), #{$alpha})')
+}
+
+@function -var($var) {
+  @return unquote('var(--dt-#{$var})')
+}
+
+@mixin min($dt, $max: "null", $device: "screen") {
+  @if $max == "null" {
+    @media only #{$device} and (min-width: #{$dt}) {
+      @content;
+    }
+  } @else {
+    @media only #{$device} and (min-width: #{$dt}) and (max-width: #{$max}) {
+      @content;
+    }
+  }
+}
+
+@function dt($dt) {
+  @return map-get($breakpoints, $dt);
+}
+
+$breakpoints: (
+        na: 0px,
+        xs: 320px,
+        sm: 600px,
+        md: 900px,
+        lg: 1200px,
+        xl: 1800px,
+);
+
+@function dt-container($dt-container-size, $true-val: false) {
+  @return map-get($dt-container-sizes, $dt-container-size);
+}
+
+$dt-container-sizes: (
+        sm: map-get($breakpoints, sm) - 30px,
+        md: map-get($breakpoints, md) - 40px,
+        lg: map-get($breakpoints, lg) - 50px,
+        xl: map-get($breakpoints, xl) - 400px
+);
+
+.dt-container {
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  &:not(.is-fluid) {
+    margin: 0 auto;
+
+    @each $dt, $dt-container-size in $dt-container-sizes {
+      @include min(#{dt(#{$dt})}) {
+        width: 100%;
+        max-width: dt-container(#{$dt});
+      }
+    }
+  }
+}
+
+@each $dt, $dt-container-size in $dt-container-sizes {
+  .dt-container-#{$dt} {
+    margin: 0 auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    width: 100%;
+
+    $i: index($dt-container-sizes, $dt $dt-container-size);
+
+    @for $j from $i through length($dt-container-sizes) {
+      @include min(#{dt(nth(nth($dt-container-sizes, $j), 1))}) {
+        max-width: dt-container(#{nth(nth($dt-container-sizes, $j), 1)});
+      }
+    }
+  }
+}
