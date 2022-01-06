@@ -1,5 +1,5 @@
 <template>
-  <div class="dt-navbar-content" ref="el" style="color: var(--dt-primary)">
+  <div class="dt-navbar-content">
     <div class="dt-navbar">
       <div class="dt-navbar__left" v-if="$slots.left">
         <slot name="left"></slot>
@@ -19,23 +19,8 @@
 </template>
 
 <script>
-import { ref } from "vue";
-import { useCssVar } from "@vueuse/core";
 export default {
   name: "dtNavbar",
-  props: {
-    bgColor: {
-      type: String,
-    },
-  },
-  setup() {
-    const el = ref(null);
-    const color = useCssVar("--dt-primary", el);
-
-    return {
-      color,
-    };
-  },
 };
 </script>
 
