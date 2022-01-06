@@ -2,20 +2,20 @@
 
 var vue = require('vue');
 
-var script$2 = {
+var script$3 = {
   name: "dtInput",
 };
 
 const _hoisted_1$2 = { type: "text" };
 
-function render$2(_ctx, _cache, $props, $setup, $data, $options) {
+function render$3(_ctx, _cache, $props, $setup, $data, $options) {
   return (vue.openBlock(), vue.createElementBlock("input", _hoisted_1$2))
 }
 
-script$2.render = render$2;
-script$2.__file = "src/components/dtInput.vue";
+script$3.render = render$3;
+script$3.__file = "src/components/dtInput.vue";
 
-var script$1 = {
+var script$2 = {
   name: "dtCard",
   props: {
     type: String,
@@ -40,7 +40,7 @@ const _hoisted_5$1 = {
   class: "dt-card__title"
 };
 
-function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+function render$2(_ctx, _cache, $props, $setup, $data, $options) {
   return (vue.openBlock(), vue.createElementBlock("div", {
     class: vue.normalizeClass(`dt-card-content type-${this.type}`)
   }, [
@@ -75,10 +75,10 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   ], 2 /* CLASS */))
 }
 
-script$1.render = render$1;
-script$1.__file = "src/components/dtCard.vue";
+script$2.render = render$2;
+script$2.__file = "src/components/dtCard.vue";
 
-var script = {
+var script$1 = {
   name: "dtNavbar",
 };
 
@@ -98,8 +98,8 @@ const _hoisted_6 = {
   class: "dt-navbar__right"
 };
 
-function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1, [
+function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  return (vue.openBlock(), vue.createElementBlock("nav", _hoisted_1, [
     vue.createElementVNode("div", _hoisted_2, [
       (_ctx.$slots.left)
         ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3, [
@@ -124,13 +124,86 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ]))
 }
 
+script$1.render = render$1;
+script$1.__file = "src/components/dtNavbar.vue";
+
+var script = {
+  name: "dtContainer",
+  props: {
+    tag: {
+      type: String,
+      default: "div",
+    },
+    sm: {
+      type: Boolean,
+      default: false,
+    },
+    md: {
+      type: Boolean,
+      default: false,
+    },
+    lg: {
+      type: Boolean,
+      default: false,
+    },
+    xl: {
+      type: Boolean,
+      default: false,
+    },
+    xxl: {
+      type: Boolean,
+      default: false,
+    },
+    fluid: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  setup(props) {
+    const className = vue.computed(() => {
+      return [
+        props.fluid ? "container-fluid" : "",
+        props.sm ? "container-sm" : "",
+        props.md ? "container-md" : "",
+        props.lg ? "container-lg" : "",
+        props.xl ? "container-xl" : "",
+        props.xxl ? "container-xxl" : "",
+        !props.fluid &&
+        !props.sm &&
+        !props.md &&
+        !props.lg &&
+        !props.xl &&
+        !props.xxl
+          ? "container"
+          : "",
+      ];
+    });
+    return {
+      className,
+      props,
+    };
+  },
+};
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (vue.openBlock(), vue.createBlock(vue.resolveDynamicComponent($props.tag), {
+    class: vue.normalizeClass($setup.className)
+  }, {
+    default: vue.withCtx(() => [
+      vue.renderSlot(_ctx.$slots, "default")
+    ]),
+    _: 3 /* FORWARDED */
+  }, 8 /* PROPS */, ["class"]))
+}
+
 script.render = render;
-script.__file = "src/components/dtNavbar.vue";
+script.__file = "src/components/dtContainer.vue";
 
 var components = {
-  dtInput: script$2,
-  dtCard: script$1,
-  dtNavbar: script,
+  dtInput: script$3,
+  dtCard: script$2,
+  dtNavbar: script$1,
+  dtContainer: script,
 };
 
 const plugin = {

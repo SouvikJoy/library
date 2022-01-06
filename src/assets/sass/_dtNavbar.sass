@@ -6,8 +6,8 @@
 
 .dt-navbar__item
   padding: 10px 15px
-  margin: 0px
-  border: 0px
+  margin: 0
+  border: 0
   background: transparent
   font-size: .85rem
   opacity: .7
@@ -20,24 +20,22 @@
     opacity: 1
 
 
-    .dt-navbar-content
+.dt-navbar-content
   width: 100%
   position: absolute
   z-index: 9000
-  top: 0px
-  left: 0px
-  width: 100%
-  border-radius: 0px 0px 15px 15px
+  top: 0
+  left: 0
+  border-radius: 0 0 15px 15px
   background: -color('color')
-  transition: all .25s ease
-  color: -color('text')
+
   &.paddingScroll:not(.paddingScrollActive)
     padding-top: 20px
     padding-bottom: 20px
     .dt-navbar__group__items
       margin-bottom: -30px
   &.dtNavbarSquare
-    border-radius: 0px
+    border-radius: 0
   &.textWhite
     color: #fff
     .dt-navbar__line
@@ -45,12 +43,24 @@
     .dt-navbar__item
       &:before
         background: #fff
-  &.fixed
-    position: fixed !important
+
   &.shadow, &.shadowActive
-    box-shadow: 0px 5px 25px 0px rgba(0,0,0, -var('shadow-opacity'))
+    box-shadow: 0 5px 25px 0 rgba(0,0,0, -var('shadow-opacity'))
   &.hidden
     transform: translate(0,-100%)
+
+.dt-navbar__item
+  transition: all .25s ease
+
+.dt-navbar__item
+  width: 100%
+
+.dt-navbar__item
+  color: -color('text')
+
+.dt-navbar__item
+  &.fixed
+    position: fixed !important
 
 .dt-navbar
   width: 100%
@@ -58,7 +68,7 @@
   display: flex
   align-items: center
   justify-content: space-between
-  padding: 0px 15px
+  padding: 0 15px
   box-sizing: border-box
   min-height: 44px
   &__left
@@ -75,8 +85,8 @@
     justify-content: center
   &__line
     position: absolute
-    left: 0px
-    bottom: 0px
+    left: 0
+    bottom: 0
     width: 100px
     background: -color('text')
     height: 3px
