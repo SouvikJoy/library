@@ -1,4 +1,5 @@
-import { openBlock, createElementBlock, normalizeClass, createElementVNode, renderSlot, createCommentVNode, computed, createBlock, resolveDynamicComponent, withCtx } from 'vue';
+import { openBlock, createElementBlock, normalizeClass, createElementVNode, renderSlot, createCommentVNode, ref, computed, createBlock, resolveDynamicComponent, withCtx } from 'vue';
+import { useCssVar } from '@vueuse/core';
 
 var script$5 = {
   name: "dtInput",
@@ -78,9 +79,26 @@ script$4.__file = "src/components/dtCard.vue";
 
 var script$3 = {
   name: "dtNavbar",
+  props: {
+    bgColor: {
+      type: String,
+    },
+  },
+  setup() {
+    const el = ref(null);
+    const color = useCssVar("--dt-primary", el);
+
+    return {
+      color,
+    };
+  },
 };
 
-const _hoisted_1 = { class: "dt-navbar-content" };
+const _hoisted_1 = {
+  class: "dt-navbar-content",
+  ref: "el",
+  style: {"color":"var(--dt-primary)"}
+};
 const _hoisted_2 = { class: "dt-navbar" };
 const _hoisted_3 = {
   key: 0,
@@ -119,7 +137,7 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
           ]))
         : createCommentVNode("v-if", true)
     ])
-  ]))
+  ], 512 /* NEED_PATCH */))
 }
 
 script$3.render = render$3;
