@@ -148,10 +148,6 @@ var script = {
       type: Boolean,
       default: false,
     },
-    xxl: {
-      type: Boolean,
-      default: false,
-    },
     fluid: {
       type: Boolean,
       default: false,
@@ -160,19 +156,13 @@ var script = {
   setup(props) {
     const className = computed(() => {
       return [
-        props.fluid ? "container-fluid" : "",
-        props.sm ? "container-sm" : "",
-        props.md ? "container-md" : "",
-        props.lg ? "container-lg" : "",
-        props.xl ? "container-xl" : "",
-        props.xxl ? "container-xxl" : "",
-        !props.fluid &&
-        !props.sm &&
-        !props.md &&
-        !props.lg &&
-        !props.xl &&
-        !props.xxl
-          ? "container"
+        props.fluid ? "dt-container-fluid" : "",
+        props.sm ? "dt-container-sm" : "",
+        props.md ? "dt-container-md" : "",
+        props.lg ? "dt-container-lg" : "",
+        props.xl ? "dt-container-xl" : "",
+        !props.fluid && !props.sm && !props.md && !props.lg && !props.xl
+          ? "dt-container"
           : "",
       ];
     });
