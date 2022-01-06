@@ -14,7 +14,7 @@
           <h3>
             <slot name="title"></slot>
           </h3>
-      </div>
+        </div>
         <p>
           <slot name="text"></slot>
         </p>
@@ -27,11 +27,9 @@
 export default {
   name: "dtCard",
   props: {
-    type: String
-  }
-}
+    type: String,
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

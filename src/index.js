@@ -1,14 +1,14 @@
-import components from './components/components'
+import components from "./components/components";
 
 const plugin = {
-    install(Vue) {
-        for (const prop in components) {
-            if (components.hasOwnProperty(prop)) {
-                const component = components[prop]
-                Vue.component(component.name, component)
-            }
-        }
+  install(Vue) {
+    for (const prop in components) {
+      if (components.hasOwnProperty(prop)) {
+        const component = components[prop];
+        Vue.component(component.name, component);
+      }
     }
-}
+  },
+};
 
-export default plugin
+export default plugin;

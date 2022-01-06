@@ -1,9 +1,9 @@
 <template>
-  <input type="text">
+  <input type="text" />
 </template>
 
 <script>
 export default {
-  name: 'dtInput'
-}
+  name: "dtInput",
+};
 </script>
