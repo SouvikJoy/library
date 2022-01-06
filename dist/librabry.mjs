@@ -78,51 +78,67 @@ script$4.__file = "src/components/dtCard.vue";
 
 var script$3 = {
   name: "dtNavbar",
+  props: {
+    navClass: {
+      type: String,
+    },
+    setup(props) {
+      const navClass = computed(() => {
+        return [
+          props.success ? "dt-navbar-content dt-navbar-bg" : "",
+          !props.success ? "dt-navbar-content" : "",
+        ];
+      });
+
+      return {
+        navClass,
+        props,
+      };
+    },
+  },
 };
 
-const _hoisted_1 = {
-  class: "dt-navbar-content",
-  style: {"background":"var(--dt-primary)"}
-};
-const _hoisted_2 = { class: "dt-navbar" };
-const _hoisted_3 = {
+const _hoisted_1 = { class: "dt-navbar" };
+const _hoisted_2 = {
   key: 0,
   class: "dt-navbar__left"
 };
-const _hoisted_4 = {
+const _hoisted_3 = {
   key: 1,
   class: "dt-navbar__center"
 };
-const _hoisted_5 = { class: "dt-navbar__item" };
-const _hoisted_6 = {
+const _hoisted_4 = { class: "dt-navbar__item" };
+const _hoisted_5 = {
   key: 2,
   class: "dt-navbar__right"
 };
 
 function render$3(_ctx, _cache, $props, $setup, $data, $options) {
-  return (openBlock(), createElementBlock("div", _hoisted_1, [
-    createElementVNode("div", _hoisted_2, [
+  return (openBlock(), createElementBlock("div", {
+    class: normalizeClass($props.navClass)
+  }, [
+    createElementVNode("div", _hoisted_1, [
       (_ctx.$slots.left)
-        ? (openBlock(), createElementBlock("div", _hoisted_3, [
+        ? (openBlock(), createElementBlock("div", _hoisted_2, [
             renderSlot(_ctx.$slots, "left")
           ]))
         : createCommentVNode("v-if", true),
       (_ctx.$slots.default)
-        ? (openBlock(), createElementBlock("div", _hoisted_4, [
+        ? (openBlock(), createElementBlock("div", _hoisted_3, [
             renderSlot(_ctx.$slots, "default", {}, () => [
-              createElementVNode("div", _hoisted_5, [
+              createElementVNode("div", _hoisted_4, [
                 renderSlot(_ctx.$slots, "navbar-item")
               ])
             ])
           ]))
         : createCommentVNode("v-if", true),
       (_ctx.$slots.right)
-        ? (openBlock(), createElementBlock("div", _hoisted_6, [
+        ? (openBlock(), createElementBlock("div", _hoisted_5, [
             renderSlot(_ctx.$slots, "right")
           ]))
         : createCommentVNode("v-if", true)
     ])
-  ]))
+  ], 2 /* CLASS */))
 }
 
 script$3.render = render$3;

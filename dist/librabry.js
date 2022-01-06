@@ -80,51 +80,67 @@ script$4.__file = "src/components/dtCard.vue";
 
 var script$3 = {
   name: "dtNavbar",
+  props: {
+    navClass: {
+      type: String,
+    },
+    setup(props) {
+      const navClass = vue.computed(() => {
+        return [
+          props.success ? "dt-navbar-content dt-navbar-bg" : "",
+          !props.success ? "dt-navbar-content" : "",
+        ];
+      });
+
+      return {
+        navClass,
+        props,
+      };
+    },
+  },
 };
 
-const _hoisted_1 = {
-  class: "dt-navbar-content",
-  style: {"background":"var(--dt-primary)"}
-};
-const _hoisted_2 = { class: "dt-navbar" };
-const _hoisted_3 = {
+const _hoisted_1 = { class: "dt-navbar" };
+const _hoisted_2 = {
   key: 0,
   class: "dt-navbar__left"
 };
-const _hoisted_4 = {
+const _hoisted_3 = {
   key: 1,
   class: "dt-navbar__center"
 };
-const _hoisted_5 = { class: "dt-navbar__item" };
-const _hoisted_6 = {
+const _hoisted_4 = { class: "dt-navbar__item" };
+const _hoisted_5 = {
   key: 2,
   class: "dt-navbar__right"
 };
 
 function render$3(_ctx, _cache, $props, $setup, $data, $options) {
-  return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1, [
-    vue.createElementVNode("div", _hoisted_2, [
+  return (vue.openBlock(), vue.createElementBlock("div", {
+    class: vue.normalizeClass($props.navClass)
+  }, [
+    vue.createElementVNode("div", _hoisted_1, [
       (_ctx.$slots.left)
-        ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3, [
+        ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2, [
             vue.renderSlot(_ctx.$slots, "left")
           ]))
         : vue.createCommentVNode("v-if", true),
       (_ctx.$slots.default)
-        ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_4, [
+        ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3, [
             vue.renderSlot(_ctx.$slots, "default", {}, () => [
-              vue.createElementVNode("div", _hoisted_5, [
+              vue.createElementVNode("div", _hoisted_4, [
                 vue.renderSlot(_ctx.$slots, "navbar-item")
               ])
             ])
           ]))
         : vue.createCommentVNode("v-if", true),
       (_ctx.$slots.right)
-        ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_6, [
+        ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_5, [
             vue.renderSlot(_ctx.$slots, "right")
           ]))
         : vue.createCommentVNode("v-if", true)
     ])
-  ]))
+  ], 2 /* CLASS */))
 }
 
 script$3.render = render$3;
