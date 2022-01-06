@@ -1,5 +1,5 @@
 <template>
-  <nav class="dt-navbar-content">
+  <div class="dt-navbar-content">
     <div class="dt-navbar">
       <div class="dt-navbar__left" v-if="$slots.left">
         <slot name="left"></slot>
@@ -15,7 +15,7 @@
         <slot name="right"></slot>
       </div>
     </div>
-  </nav>
+  </div>
 </template>
 
 <script>
