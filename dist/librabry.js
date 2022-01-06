@@ -81,22 +81,23 @@ script$4.__file = "src/components/dtCard.vue";
 var script$3 = {
   name: "dtNavbar",
   props: {
-    navClass: {
-      type: String,
+    success: {
+      type: Boolean,
+      default: false,
     },
-    setup(props) {
-      const navClass = vue.computed(() => {
-        return [
-          props.success ? "dt-navbar-content dt-navbar-bg" : "",
-          !props.success ? "dt-navbar-content" : "",
-        ];
-      });
+  },
+  setup(props) {
+    const navClass = vue.computed(() => {
+      return [
+        props.success ? "dt-navbar-content dt-navbar-bg" : "",
+        !props.success ? "dt-navbar-content" : "dt-navbar-content",
+      ];
+    });
 
-      return {
-        navClass,
-        props,
-      };
-    },
+    return {
+      navClass,
+      props,
+    };
   },
 };
 
@@ -117,7 +118,7 @@ const _hoisted_5 = {
 
 function render$3(_ctx, _cache, $props, $setup, $data, $options) {
   return (vue.openBlock(), vue.createElementBlock("div", {
-    class: vue.normalizeClass($props.navClass)
+    class: vue.normalizeClass($setup.navClass)
   }, [
     vue.createElementVNode("div", _hoisted_1, [
       (_ctx.$slots.left)
