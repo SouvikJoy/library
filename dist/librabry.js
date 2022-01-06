@@ -99,7 +99,7 @@ const _hoisted_6 = {
 };
 
 function render$1(_ctx, _cache, $props, $setup, $data, $options) {
-  return (vue.openBlock(), vue.createElementBlock("nav", _hoisted_1, [
+  return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1, [
     vue.createElementVNode("div", _hoisted_2, [
       (_ctx.$slots.left)
         ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3, [

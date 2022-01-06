@@ -97,7 +97,7 @@ const _hoisted_6 = {
 };
 
 function render$1(_ctx, _cache, $props, $setup, $data, $options) {
-  return (openBlock(), createElementBlock("nav", _hoisted_1, [
+  return (openBlock(), createElementBlock("div", _hoisted_1, [
     createElementVNode("div", _hoisted_2, [
       (_ctx.$slots.left)
         ? (openBlock(), createElementBlock("div", _hoisted_3, [
