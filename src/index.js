@@ -1,10 +1,5 @@
 import components from './components/components'
 
-import 'root'
-import 'global'
-import 'mixins'
-import 'dtCard'
-
 const plugin = {
     install(Vue) {
         for (const prop in components) {

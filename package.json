@@ -6,7 +6,8 @@
   "module": "dist/librabry.mjs",
   "files": [
     "dist/*",
-    "src/components/*"
+    "src/components/*",
+    "src/assets/*"
   ],
   "scripts": {
     "build": "rollup -c"
